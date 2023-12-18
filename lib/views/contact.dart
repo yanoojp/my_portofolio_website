@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ContactTab extends StatelessWidget {
@@ -20,27 +21,27 @@ class ContactTab extends StatelessWidget {
             // ),
             // Divider(),
 
-            const ListTile(
-              leading: Icon(Icons.business),
-              title: Text('LinkedIn'),
-              subtitle: Text('Your LinkedIn Profile'),
-              // onTap: () => launch('https://www.linkedin.com/in/yourprofile'),
+             ListTile(
+              leading: const FaIcon(FontAwesomeIcons.linkedinIn),
+              title: const Text('LinkedIn'),
+              subtitle: const Text('Your LinkedIn Profile'),
+              onTap: () => launch('https://www.linkedin.com/in/yushi-nogami-484622295'),
             ),
             const Divider(),
 
             ListTile(
-              leading: const Icon(Icons.chat),
+              leading: const FaIcon(FontAwesomeIcons.twitter),
               title: const Text('X'),
               subtitle: const Text('@yanooo_jp'),
               onTap: () => launch('https://x.com/yanooo_jp?s=21'),
             ),
             const Divider(),
 
-            const ListTile(
-              leading: Icon(Icons.code),
-              title: Text('GitHub'),
-              subtitle: Text('yourGitHubUsername'),
-              // onTap: () => launch('https://github.com/yourGitHubUsername'),
+            ListTile(
+              leading: const FaIcon(FontAwesomeIcons.github),
+              title: const Text('GitHub'),
+              subtitle: const Text('yanoojp'),
+              onTap: () => launch('https://github.com/yanoojp'),
             ),
             const Divider(),
           ],
