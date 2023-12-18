@@ -17,11 +17,11 @@ class ProjectsTab extends StatelessWidget {
           ),
           Card(
             child: ListTile(
-              leading: const Icon(Icons.work), 
-              title: const Text('Project Title 1'),
-              subtitle: const Text('Short description of the project.'),
-              onTap: () {
-              },
+              leading: const Icon(Icons.work),
+              title: const Text('Restaurant Talks'),
+              subtitle: const Text(
+                  'This is an app aimed at improving operations in restaurants.\nIts primary goal is to enhance communication between the hall and the kitchen.\nDesigned for use in the field, it focuses on a design that can be used quickly and easily with just a few taps with tablets and phones.'),
+              onTap: () {},
             ),
           ),
         ],

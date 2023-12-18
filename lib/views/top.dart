@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio_website/views/contact.dart';
-import 'package:my_portfolio_website/views/home.dart';
-import 'package:my_portfolio_website/views/projects.dart';
+import 'package:my_portfolio_website/views/tabs/contact.dart';
+import 'package:my_portfolio_website/views/tabs/home.dart';
+import 'package:my_portfolio_website/views/tabs/projects.dart';
 
 class TopPage extends StatelessWidget {
   const TopPage({super.key});

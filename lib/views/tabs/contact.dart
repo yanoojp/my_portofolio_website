@@ -13,35 +13,26 @@ class ContactTab extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            // ListTile(
-            //   leading: Icon(Icons.email),
-            //   title: Text('Email Me'),
-            //   subtitle: Text('your.email@example.com'),
-            //   // onTap: () => launch('mailto:your.email@example.com'),
-            // ),
-            // Divider(),
-
-             ListTile(
+            ListTile(
               leading: const FaIcon(FontAwesomeIcons.linkedinIn),
               title: const Text('LinkedIn'),
-              subtitle: const Text('Your LinkedIn Profile'),
-              onTap: () => launch('https://www.linkedin.com/in/yushi-nogami-484622295'),
+              subtitle: const Text('Yushi Nogami (野上雄史)'),
+              onTap: () => launchUrl(Uri.parse(
+                  'https://www.linkedin.com/in/yushi-nogami-484622295')),
             ),
             const Divider(),
-
             ListTile(
               leading: const FaIcon(FontAwesomeIcons.twitter),
               title: const Text('X'),
               subtitle: const Text('@yanooo_jp'),
-              onTap: () => launch('https://x.com/yanooo_jp?s=21'),
+              onTap: () => launchUrl(Uri.parse('https://x.com/yanooo_jp?s=21')),
             ),
             const Divider(),
-
             ListTile(
               leading: const FaIcon(FontAwesomeIcons.github),
               title: const Text('GitHub'),
               subtitle: const Text('yanoojp'),
-              onTap: () => launch('https://github.com/yanoojp'),
+              onTap: () => launchUrl(Uri.parse('https://github.com/yanoojp')),
             ),
             const Divider(),
           ],
