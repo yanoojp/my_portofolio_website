@@ -11,15 +11,31 @@ class TopPage extends StatelessWidget {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-        appBar: AppBar(
-          title: const Text('My Portfolio Website'),
-          backgroundColor: Colors.yellow,
-          bottom: const TabBar(
-            tabs: [
-              Tab(text: 'Home'),
-              Tab(text: 'Projects'),
-              Tab(text: 'Contacts'),
-            ],
+        appBar: PreferredSize(
+          preferredSize:
+              Size.fromHeight(MediaQuery.of(context).size.height * 0.25),
+          child: AppBar(
+            title: const Text(
+              'Welcome to My Portfolio',
+              style: TextStyle(color: Colors.white),
+            ),
+            flexibleSpace: Container(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/welcome_image_jaxa.jpg'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            bottom: const TabBar(
+              labelColor: Colors.white,
+              unselectedLabelColor: Colors.white,
+              tabs: [
+                Tab(text: 'Home'),
+                Tab(text: 'Projects'),
+                Tab(text: 'Contacts'),
+              ],
+            ),
           ),
         ),
         body: const Padding(
@@ -28,21 +44,18 @@ class TopPage extends StatelessWidget {
             children: [
               SingleChildScrollView(
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[HomeTab()],
-                ),
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[HomeTab()]),
               ),
               SingleChildScrollView(
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[ProjectsTab()],
-                ),
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[ProjectsTab()]),
               ),
               SingleChildScrollView(
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[ContactTab()],
-                ),
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[ContactTab()]),
               ),
             ],
           ),
