@@ -49,7 +49,6 @@ class HomeTab extends StatelessWidget {
             'Your Job Title / Profession',
             style: Theme.of(context).textTheme.titleMedium,
           ),
-          const SizedBox(height: 16),
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Text(

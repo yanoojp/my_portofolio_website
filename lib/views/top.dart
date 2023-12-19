@@ -15,17 +15,37 @@ class TopPage extends StatelessWidget {
           preferredSize:
               Size.fromHeight(MediaQuery.of(context).size.height * 0.25),
           child: AppBar(
-            title: const Text(
-              'Welcome to My Portfolio',
-              style: TextStyle(color: Colors.white),
-            ),
-            flexibleSpace: Container(
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/welcome_image_jaxa.jpg'),
-                  fit: BoxFit.cover,
-                ),
-              ),
+            title: null, 
+            flexibleSpace: LayoutBuilder(
+              builder: (BuildContext context, BoxConstraints constraints) {
+                var top = constraints.biggest.height;
+                return Stack(
+                  alignment: Alignment.center,
+                  children: <Widget>[
+                    Container(
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('assets/welcome_image_jaxa.jpg'),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      top: top / 2 - (kToolbarHeight / 2),
+                      child: SizedBox(
+                        width: MediaQuery.of(context).size.width,
+                        child: const Text(
+                          'Welcome to My Portfolio',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(color: Colors.white,
+                          fontSize: 20, fontWeight: FontWeight.bold
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                );
+              },
             ),
             bottom: const TabBar(
               labelColor: Colors.white,
