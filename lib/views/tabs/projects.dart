@@ -6,25 +6,33 @@ class ProjectsTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Column(
-        children: <Widget>[
-          const Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Text(
-              'My Projects',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+      child: Padding(
+        padding: EdgeInsets.symmetric(
+            vertical: 30.0,
+            horizontal: MediaQuery.of(context).size.width * 0.2),
+        child: Column(
+          children: <Widget>[
+            const Padding(
+              padding: EdgeInsets.all(30.0),
+              child: Text(
+                'My Projects',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
             ),
-          ),
-          Card(
-            child: ListTile(
-              leading: const Icon(Icons.work),
-              title: const Text('Restaurant Talks'),
-              subtitle: const Text(
-                  'This is an app aimed at improving operations in restaurants.\nIts primary goal is to enhance communication between the hall and the kitchen.\nDesigned for use in the field, it focuses on a design that can be used quickly and easily with just a few taps with tablets and phones.'),
-              onTap: () {},
+            Card(
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: ListTile(
+                  leading: const Icon(Icons.work),
+                  title: const Text('Restaurant Talks'),
+                  subtitle: const Text(
+                      'This is an app aimed at improving operations in restaurants.\nIts primary goal is to enhance communication between the hall and the kitchen.\nDesigned for use in the field, it focuses on a design that can be used quickly and easily with just a few taps with tablets and phones.'),
+                  onTap: () {},
+                ),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
