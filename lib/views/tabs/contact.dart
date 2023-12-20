@@ -9,10 +9,20 @@ class ContactTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.symmetric(
+            vertical: 30.0, horizontal: MediaQuery.of(context).size.width * 0.2),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
+            const Center(
+              child: Padding(
+                padding: EdgeInsets.all(30.0),
+                child: Text(
+                  'My Contacts',
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                ),
+              ),
+            ),
             ListTile(
               leading: const FaIcon(FontAwesomeIcons.linkedinIn),
               title: const Text('LinkedIn'),
@@ -20,21 +30,27 @@ class ContactTab extends StatelessWidget {
               onTap: () => launchUrl(Uri.parse(
                   'https://www.linkedin.com/in/yushi-nogami-484622295')),
             ),
+            const SizedBox(height: 20),
             const Divider(),
+            const SizedBox(height: 20),
             ListTile(
               leading: const FaIcon(FontAwesomeIcons.twitter),
               title: const Text('X'),
               subtitle: const Text('@yanooo_jp'),
               onTap: () => launchUrl(Uri.parse('https://x.com/yanooo_jp?s=21')),
             ),
+            const SizedBox(height: 20),
             const Divider(),
+            const SizedBox(height: 20),
             ListTile(
               leading: const FaIcon(FontAwesomeIcons.github),
               title: const Text('GitHub'),
               subtitle: const Text('yanoojp'),
               onTap: () => launchUrl(Uri.parse('https://github.com/yanoojp')),
             ),
+            const SizedBox(height: 20),
             const Divider(),
+            const SizedBox(height: 20),
           ],
         ),
       ),
