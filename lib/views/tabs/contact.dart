@@ -10,7 +10,8 @@ class ContactTab extends StatelessWidget {
     return SingleChildScrollView(
       child: Padding(
         padding: EdgeInsets.symmetric(
-            vertical: 30.0, horizontal: MediaQuery.of(context).size.width * 0.2),
+            vertical: 30.0,
+            horizontal: MediaQuery.of(context).size.width * 0.2),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -23,30 +24,40 @@ class ContactTab extends StatelessWidget {
                 ),
               ),
             ),
-            ListTile(
-              leading: const FaIcon(FontAwesomeIcons.linkedinIn),
-              title: const Text('LinkedIn'),
-              subtitle: const Text('Yushi Nogami (野上雄史)'),
-              onTap: () => launchUrl(Uri.parse(
-                  'https://www.linkedin.com/in/yushi-nogami-484622295')),
+            Padding(
+              padding: const EdgeInsets.only(left: 30.0),
+              child: ListTile(
+                leading: const FaIcon(FontAwesomeIcons.linkedinIn),
+                title: const Text('LinkedIn'),
+                subtitle: const Text('Yushi Nogami\n(野上雄史)'),
+                onTap: () => launchUrl(Uri.parse(
+                    'https://www.linkedin.com/in/yushi-nogami-484622295')),
+              ),
             ),
             const SizedBox(height: 20),
             const Divider(),
             const SizedBox(height: 20),
-            ListTile(
-              leading: const FaIcon(FontAwesomeIcons.twitter),
-              title: const Text('X'),
-              subtitle: const Text('@yanooo_jp'),
-              onTap: () => launchUrl(Uri.parse('https://x.com/yanooo_jp?s=21')),
+            Padding(
+              padding: const EdgeInsets.only(left: 30.0),
+              child: ListTile(
+                leading: const FaIcon(FontAwesomeIcons.twitter),
+                title: const Text('X'),
+                subtitle: const Text('@yanooo_jp'),
+                onTap: () =>
+                    launchUrl(Uri.parse('https://x.com/yanooo_jp?s=21')),
+              ),
             ),
             const SizedBox(height: 20),
             const Divider(),
             const SizedBox(height: 20),
-            ListTile(
-              leading: const FaIcon(FontAwesomeIcons.github),
-              title: const Text('GitHub'),
-              subtitle: const Text('yanoojp'),
-              onTap: () => launchUrl(Uri.parse('https://github.com/yanoojp')),
+            Padding(
+              padding: const EdgeInsets.only(left: 30.0),
+              child: ListTile(
+                leading: const FaIcon(FontAwesomeIcons.github),
+                title: const Text('GitHub'),
+                subtitle: const Text('yanoojp'),
+                onTap: () => launchUrl(Uri.parse('https://github.com/yanoojp')),
+              ),
             ),
             const SizedBox(height: 20),
             const Divider(),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ProjectsTab extends StatelessWidget {
   const ProjectsTab({super.key});
@@ -19,16 +20,24 @@ class ProjectsTab extends StatelessWidget {
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
             ),
-            Card(
-              child: Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: ListTile(
-                  leading: const Icon(Icons.work),
-                  title: const Text('Restaurant Talks'),
-                  subtitle: const Text(
-                      'This is an app aimed at improving operations in restaurants.\nIts primary goal is to enhance communication between the hall and the kitchen.\nDesigned for use in the field, it focuses on a design that can be used quickly and easily with just a few taps with tablets and phones.'),
-                  onTap: () {},
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                foregroundColor: Colors.black,
+                backgroundColor: Colors.white,
+                padding: const EdgeInsets.all(15.0),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
                 ),
+              ),
+              onPressed: () {
+                launchUrl(Uri.parse(
+                    'https://apps.apple.com/jp/app/restaurant-talks/id1670850651?l=en-US'));
+              },
+              child: const ListTile(
+                leading: Icon(Icons.work),
+                title: Text('Restaurant Talks', style: TextStyle(fontWeight: FontWeight.bold),),
+                subtitle: Text(
+                    'This is an app aimed at improving operations in restaurants.\nIts primary goal is to enhance communication between the hall and the kitchen.\nDesigned for use in the field, it focuses on a design that can be used quickly and easily with just a few taps with tablets and phones.'),
               ),
             ),
           ],

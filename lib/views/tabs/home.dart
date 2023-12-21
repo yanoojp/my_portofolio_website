@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 class HomeTab extends StatelessWidget {
   const HomeTab({super.key});
@@ -22,23 +23,56 @@ class HomeTab extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                const SizedBox(width: 100),
-                const CircleAvatar(
-                    radius: 100,
-                    backgroundImage: AssetImage('assets/face.jpg')),
-                Expanded(
-                  child: Column(
-                    children: [
-                      Text('Yushi Nogami (野上雄史)',
-                          style: Theme.of(context).textTheme.headlineSmall),
-                      const SizedBox(height: 8),
-                      const Text('Mobile Developer / Flutter Developer',
-                          style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold)),
-                    ],
+                Flexible(
+                  child: ResponsiveBuilder(
+                    builder: (context, sizingInformation) {
+                      if (sizingInformation.deviceScreenType ==
+                          DeviceScreenType.mobile) {
+                        return Column(
+                          children: [
+                            const CircleAvatar(
+                                radius: 100,
+                                backgroundImage: AssetImage('assets/face.jpg')),
+                            const SizedBox(height: 20),
+                            Text('Yushi Nogami (野上雄史) / yanoo (ヤヌー)',
+                                style:
+                                    Theme.of(context).textTheme.headlineSmall),
+                            const SizedBox(height: 8.0),
+                            const Text('Mobile Developer / Flutter Developer',
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.bold)),
+                          ],
+                        );
+                      } else {
+                        return Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            const CircleAvatar(
+                                radius: 100,
+                                backgroundImage: AssetImage('assets/face.jpg')),
+                            const SizedBox(width: 20),
+                            Flexible(
+                              child: Column(
+                                children: [
+                                  Text('Yushi Nogami (野上雄史) / yanoo (ヤヌー)',
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .headlineMedium),
+                                  const SizedBox(height: 16.0),
+                                  const Text('Mobile Developer / Flutter Developer',
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold)),
+                                ],
+                              ),
+                            ),
+                          ],
+                        );
+                      }
+                    },
                   ),
                 ),
-                const SizedBox(width: 10)
+                const SizedBox(width: 20),
               ],
             ),
             const SizedBox(height: 30),
