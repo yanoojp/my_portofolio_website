@@ -18,20 +18,20 @@ class TopPage extends StatelessWidget {
                 expandedHeight: MediaQuery.of(context).size.height * 0.25,
                 floating: false,
                 pinned: true,
-                backgroundColor: Color(0xFF920012),
+                backgroundColor: const Color(0xFF920012),
                 flexibleSpace: FlexibleSpaceBar(
                   // background: Image.asset(
                   //   'assets/welcome_image_jaxa.jpg',
                   //   fit: BoxFit.fitHeight,
                   // ),
                   centerTitle: true,
-                  title: SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.15,
-                    child: const Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Welcome to My Portfolio',
+                  titlePadding: const EdgeInsets.only(top: 100),
+                  title: LayoutBuilder(
+                    builder: (context, constraints) {
+                      return SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.15,
+                        child: const Text(
+                          'Welcome to My Website',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             color: Colors.white,
@@ -39,9 +39,8 @@ class TopPage extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        SizedBox(width: 55,)
-                      ],
-                    ),
+                      );
+                    },
                   ),
                 ),
                 bottom: const TabBar(
