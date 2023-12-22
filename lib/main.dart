@@ -19,6 +19,19 @@ class MyApp extends StatelessWidget {
           color: Colors.brown,
         ),
       ),
+      supportedLocales: const [
+        Locale('en', 'US'),
+        Locale('ja', 'JA'),
+      ],
+      localeResolutionCallback: (locale, supportedLocales) {
+        for (var supportedLocale in supportedLocales) {
+          if (supportedLocale.languageCode == locale?.languageCode &&
+              supportedLocale.countryCode == locale?.countryCode) {
+            return supportedLocale;
+          }
+        }
+        return supportedLocales.first;
+      },
     );
   }
 }

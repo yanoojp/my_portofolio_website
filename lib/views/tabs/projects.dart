@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio_website/utils/classes/localization.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ProjectsTab extends StatelessWidget {
@@ -6,6 +7,8 @@ class ProjectsTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final appLocalization = AppLocalizations.of(context);
+
     return SingleChildScrollView(
       child: Padding(
         padding: EdgeInsets.symmetric(
@@ -33,11 +36,15 @@ class ProjectsTab extends StatelessWidget {
                 launchUrl(Uri.parse(
                     'https://apps.apple.com/jp/app/restaurant-talks/id1670850651?l=en-US'));
               },
-              child: const ListTile(
-                leading: Icon(Icons.work),
-                title: Text('Restaurant Talks', style: TextStyle(fontWeight: FontWeight.bold),),
-                subtitle: Text(
-                    'This is an app aimed at improving operations in restaurants.\nIts primary goal is to enhance communication between the hall and the kitchen.\nDesigned for use in the field, it focuses on a design that can be used quickly and easily with just a few taps with tablets and phones.'),
+              child: ListTile(
+                leading: const Icon(Icons.work),
+                title: const Text(
+                  'Restaurant Talks',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                subtitle: Text(appLocalization
+                        ?.translate('restaurant_talks_explanation') ??
+                    'Loading...'),
               ),
             ),
           ],
