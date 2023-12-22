@@ -32,7 +32,8 @@ class HomeTab extends StatelessWidget {
                           children: [
                             const CircleAvatar(
                                 radius: 100,
-                                backgroundImage: AssetImage('assets/face.jpg')),
+                                backgroundImage:
+                                    AssetImage('assets/images/face.jpg')),
                             const SizedBox(height: 20),
                             Text('Yushi Nogami (野上雄史) / yanoo (ヤヌー)',
                                 style:
@@ -49,7 +50,8 @@ class HomeTab extends StatelessWidget {
                           children: [
                             const CircleAvatar(
                                 radius: 100,
-                                backgroundImage: AssetImage('assets/face.jpg')),
+                                backgroundImage:
+                                    AssetImage('assets/images/face.jpg')),
                             const SizedBox(width: 20),
                             Flexible(
                               child: Column(
@@ -59,7 +61,8 @@ class HomeTab extends StatelessWidget {
                                           .textTheme
                                           .headlineMedium),
                                   const SizedBox(height: 16.0),
-                                  const Text('Mobile Developer / Flutter Developer',
+                                  const Text(
+                                      'Mobile Developer / Flutter Developer',
                                       style: TextStyle(
                                           fontSize: 20,
                                           fontWeight: FontWeight.bold)),
