@@ -1,14 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio_website/utils/classes/localization.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:my_portfolio_website/providers/localization_provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class ProjectsTab extends StatelessWidget {
+class ProjectsTab extends ConsumerWidget {
   const ProjectsTab({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final appLocalization = AppLocalizations.of(context);
+  Widget build(BuildContext context, WidgetRef ref) {
+    final localizationAsyncValue = ref.watch(localizationProvider);
 
+    return localizationAsyncValue.when(
+      data: (localization) => buildContent(context, localization),
+      loading: () => const CircularProgressIndicator(),
+      error: (e, _) => Text('Error: $e'),
+    );
+  }
+
+  Widget buildContent(BuildContext context, Localization localization) {
     return SingleChildScrollView(
       child: Padding(
         padding: EdgeInsets.symmetric(
@@ -42,9 +51,8 @@ class ProjectsTab extends StatelessWidget {
                   'Restaurant Talks',
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                subtitle: Text(appLocalization
-                        ?.translate('restaurant_talks_explanation') ??
-                    'Loading...'),
+                subtitle: Text(
+                    localization.translate('restaurant_talks_explanation')),
               ),
             ),
           ],
