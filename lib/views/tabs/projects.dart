@@ -1,11 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:my_portfolio_website/providers/localization_provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class ProjectsTab extends StatelessWidget {
+class ProjectsTab extends ConsumerWidget {
   const ProjectsTab({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final localizationAsyncValue = ref.watch(localizationProvider);
+
+    return localizationAsyncValue.when(
+      data: (localization) => buildContent(context, localization),
+      loading: () => const CircularProgressIndicator(),
+      error: (e, _) => Text('Error: $e'),
+    );
+  }
+
+  Widget buildContent(BuildContext context, Localization localization) {
     return SingleChildScrollView(
       child: Padding(
         padding: EdgeInsets.symmetric(
@@ -33,11 +45,14 @@ class ProjectsTab extends StatelessWidget {
                 launchUrl(Uri.parse(
                     'https://apps.apple.com/jp/app/restaurant-talks/id1670850651?l=en-US'));
               },
-              child: const ListTile(
-                leading: Icon(Icons.work),
-                title: Text('Restaurant Talks', style: TextStyle(fontWeight: FontWeight.bold),),
+              child: ListTile(
+                leading: const Icon(Icons.work),
+                title: const Text(
+                  'Restaurant Talks',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
                 subtitle: Text(
-                    'This is an app aimed at improving operations in restaurants.\nIts primary goal is to enhance communication between the hall and the kitchen.\nDesigned for use in the field, it focuses on a design that can be used quickly and easily with just a few taps with tablets and phones.'),
+                    localization.translate('restaurant_talks_explanation')),
               ),
             ),
           ],
