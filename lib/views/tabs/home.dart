@@ -100,7 +100,7 @@ class HomeTab extends ConsumerWidget {
                 children: [
                   Text(
                     localizationData.translate('home_message'),
-                    style: const TextStyle(height: 3),
+                    style: const TextStyle(height: 2.5),
                   )
                 ],
               ),
