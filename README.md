@@ -1,16 +1,13 @@
-# my_portfolio_website
+# My Portfolio Website
 
-A new Flutter project.
+This repository contains the source code for my personal portfolio website, developed using Flutter. This project showcases my skills and projects in a web format, providing a comprehensive look at my professional abilities and achievements.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **Responsive Design:** Optimized for viewing on various devices, including desktops, tablets, and smartphones.
+- **Portfolio Section:** Showcases your best work with high-quality images and descriptions, categorized for easy navigation.
+- **About Me Page:** A personal introduction, including your skills and experiences.
+- **Contact Information:** Easy ways to reach you, such as a contact form, email address, or phone number.
+- **Social Media Integration:** Links to your social media profiles and options for sharing your portfolio pieces.
+<!-- - **Blog Section:** Insights into your work process, industry news, or topics you are passionate about. -->
+- **Multilingual Support:** If your audience is international, offering multiple language options.
